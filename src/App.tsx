@@ -24,7 +24,7 @@ function App() {
         <div className="min-h-screen bg-background text-foreground">
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/dashboard" element={<div className="p-8 text-2xl">Dashboard - Simplified</div>} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/models" element={<div className="p-8 text-2xl">Models - Simplified</div>} />
             <Route path="/projects" element={<div className="p-8 text-2xl">Projects - Simplified</div>} />
             <Route path="/projects/new" element={<NewProject />} />
