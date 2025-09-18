@@ -1,7 +1,11 @@
 import { QazCloudLogo } from "@/components/ui/qazcloud-logo";
 import { LanguageToggle } from "@/components/ui/language-toggle";
+import { UserMenu } from "@/components/ui/user-menu";
+import { useAuth } from "@/hooks/useAuth";
 
 export const Header = () => {
+  const { user } = useAuth();
+
   return (
     <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto px-4 py-3 bg-transparent">
@@ -14,6 +18,7 @@ export const Header = () => {
           {/* Right side controls */}
           <div className="flex items-center space-x-4">
             <LanguageToggle />
+            {user && <UserMenu />}
           </div>
         </div>
       </div>
