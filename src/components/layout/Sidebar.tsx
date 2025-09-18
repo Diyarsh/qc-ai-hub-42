@@ -294,7 +294,6 @@ export const Sidebar = ({
                 </p>
                 <p className="text-xs text-muted-foreground">Онлайн</p>
               </div>
-              <Settings className="h-4 w-4 text-muted-foreground" />
             </>
           )}
         </div>
