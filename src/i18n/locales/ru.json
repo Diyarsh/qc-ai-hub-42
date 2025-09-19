@@ -35,19 +35,11 @@
     }
   },
   "navigation": {
-    "home": "Главная",
-    "modelCatalog": "Каталог моделей",
-    "myProjects": "Мои проекты",
-    "readySolutions": "Готовые решения",
-    "laboratory": "Лаборатория",
-    "datasets": "Датасеты",
-    "documentation": "Документация",
-    "settings": "Настройки",
-    "devMode": "Dev Mode"
+    "chat": "Чат",
+    "settings": "Настройки"
   },
   "groups": {
-    "main": "Основное",
-    "development": "Разработка",
-    "settings": "Настройки"
+    "studio": "Studio",
+    "dashboard": "Dashboard"
   }
 }
