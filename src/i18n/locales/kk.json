@@ -35,11 +35,19 @@
     }
   },
   "navigation": {
-    "chat": "Чат",
-    "settings": "Баптаулар"
+    "home": "Басты бет",
+    "modelCatalog": "Модельдер каталогы",
+    "myProjects": "Менің жобаларым",
+    "readySolutions": "Дайын шешімдер",
+    "laboratory": "Зертхана",
+    "datasets": "Деректер жиынтығы",
+    "documentation": "Құжаттама",
+    "settings": "Баптаулар",
+    "devMode": "Әзірлеуші режимі"
   },
   "groups": {
-    "studio": "Studio",
-    "dashboard": "Dashboard"
+    "main": "Негізгі",
+    "development": "Әзірлеу",
+    "settings": "Баптаулар"
   }
 }

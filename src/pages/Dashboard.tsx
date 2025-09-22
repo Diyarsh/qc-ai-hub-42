@@ -104,8 +104,8 @@ export default function Dashboard() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">QazCloud AI-HUB</h1>
-          <p className="text-muted-foreground">Мультиагентный ассистент для решения ваших задач</p>
+          <h1 className="text-3xl font-bold text-foreground">Панель управления</h1>
+          <p className="text-muted-foreground">Обзор активности AI-платформы</p>
         </div>
         <Button>
           <Zap className="h-4 w-4 mr-2" />

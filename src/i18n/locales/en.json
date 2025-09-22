@@ -35,11 +35,19 @@
     }
   },
   "navigation": {
-    "chat": "Chat",
-    "settings": "Settings"
+    "home": "Home",
+    "modelCatalog": "Model Catalog",
+    "myProjects": "My Projects", 
+    "readySolutions": "Ready Solutions",
+    "laboratory": "Laboratory",
+    "datasets": "Datasets",
+    "documentation": "Documentation",
+    "settings": "Settings",
+    "devMode": "Dev Mode"
   },
   "groups": {
-    "studio": "Studio",
-    "dashboard": "Dashboard"
+    "main": "Main",
+    "development": "Development", 
+    "settings": "Settings"
   }
 }

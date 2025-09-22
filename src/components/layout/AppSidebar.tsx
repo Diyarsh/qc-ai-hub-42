@@ -5,9 +5,17 @@ import { useDeveloperMode } from "@/hooks/useDeveloperMode";
 import { Switch } from "@/components/ui/switch";
 import { useTranslation } from 'react-i18next';
 import {
-  MessageSquare,
+  Database,
+  FolderOpen,
   Settings,
-  Code
+  Cpu,
+  Network,
+  Lightbulb,
+  GitBranch,
+  FileText,
+  Layers,
+  Code,
+  Package
 } from "lucide-react";
 
 import {
@@ -33,16 +41,52 @@ export function AppSidebar() {
 
   const navigationItems = [
     {
-      titleKey: "navigation.chat",
+      titleKey: "navigation.home",
       url: "/dashboard",
-      icon: MessageSquare,
-      group: "studio"
+      icon: () => <CompanyLogo className="h-4 w-4" />,
+      group: "main"
+    },
+    {
+      titleKey: "navigation.modelCatalog",
+      url: "/models",
+      icon: Database,
+      group: "main"
+    },
+    {
+      titleKey: "navigation.myProjects",
+      url: "/projects",
+      icon: FolderOpen,
+      group: "main"
+    },
+    {
+      titleKey: "navigation.readySolutions",
+      url: "/templates",
+      icon: Package,
+      group: "main"
+    },
+    {
+      titleKey: "navigation.laboratory",
+      url: "/lab",
+      icon: Cpu,
+      group: "development"
+    },
+    {
+      titleKey: "navigation.datasets",
+      url: "/datasets",
+      icon: Layers,
+      group: "development"
+    },
+    {
+      titleKey: "navigation.documentation",
+      url: "/docs",
+      icon: FileText,
+      group: "settings"
     },
     {
       titleKey: "navigation.settings",
       url: "/settings",
       icon: Settings,
-      group: "dashboard"
+      group: "settings"
     }
   ];
 
@@ -55,8 +99,9 @@ export function AppSidebar() {
   }, {} as Record<string, typeof navigationItems>);
 
   const groupLabels = {
-    studio: t("groups.studio"),
-    dashboard: t("groups.dashboard")
+    main: t("groups.main"),
+    development: t("groups.development"),
+    settings: t("groups.settings")
   };
 
   const isActive = (path: string) => {
@@ -81,6 +126,11 @@ export function AppSidebar() {
 
       <SidebarContent>
         {Object.entries(groupedItems).map(([groupKey, items]) => {
+          // Скрываем группу разработка если режим разработчика отключен
+          if (groupKey === 'development' && !isDeveloperMode) {
+            return null;
+          }
+          
           return (
             <SidebarGroup key={groupKey}>
               {!collapsed && (
@@ -114,6 +164,28 @@ export function AppSidebar() {
             </SidebarGroup>
           );
         })}
+
+        {/* Developer Mode Toggle */}
+        {!collapsed && (
+          <SidebarGroup>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <div className="flex items-center justify-between px-2 py-2 text-sidebar-foreground">
+                    <div className="flex items-center space-x-2">
+                      <Code className="h-4 w-4 text-primary" />
+                      <span className="text-sm font-medium">{t('navigation.devMode')}</span>
+                    </div>
+                    <Switch 
+                      checked={isDeveloperMode} 
+                      onCheckedChange={toggleDeveloperMode}
+                    />
+                  </div>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
       </SidebarContent>
 
       <SidebarFooter className="border-t border-sidebar-border">
